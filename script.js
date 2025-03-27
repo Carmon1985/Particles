@@ -11,7 +11,7 @@ let composer, bloomPass; // For post-processing
 // --- Particle System Variables ---
 let particleGeometry, particleMaterial, particleSystem;
 let targetPositions = []; // To store face vertex positions
-const particleCount = 15000; // Adjust for performance vs density
+const particleCount = 30000; // Adjust for performance vs density
 const particleTextureUrl = 'assets/particle.png'; // Make sure this path is correct
 const modelUrl = 'assets/face_model.glb';       // Make sure this path is correct
 
@@ -210,7 +210,7 @@ function createParticles(texture) {
     particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
     particleMaterial = new THREE.PointsMaterial({
-        size: 0.035, // <<< ADJUST PARTICLE SIZE
+        size: 0.045, // <<< ADJUST PARTICLE SIZE
         map: texture,
         blending: THREE.AdditiveBlending, // Crucial for light effect
         depthWrite: false, // Helps with additive blending transparency
@@ -239,8 +239,8 @@ function setupPostProcessing() {
     // Adjust Bloom parameters for desired glow effect
     bloomPass = new THREE.UnrealBloomPass(
         new THREE.Vector2(window.innerWidth, window.innerHeight),
-        0.8, // strength <<< ADJUST BLOOM STRENGTH
-        0.5, // radius   <<< ADJUST BLOOM RADIUS (spread)
+        1, // strength <<< ADJUST BLOOM STRENGTH
+        0.6, // radius   <<< ADJUST BLOOM RADIUS (spread)
         0.15 // threshold<<< ADJUST BLOOM THRESHOLD (brightness needed to bloom)
     );
     composer.addPass(bloomPass);
