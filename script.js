@@ -11,8 +11,8 @@ let composer, bloomPass; // For post-processing
 let particleGeometry, particleMaterial, particleSystem;
 let targetPositions = []; // To store face vertex positions
 const particleCount = 15000; // Adjust for performance vs density
-const particleTextureUrl = 'assets/particle.png';
-const modelUrl = 'assets/face_model.glb'; // IMPORTANT: Path to your model
+const particleTextureUrl = 'PARTICLES/assets/particle.png';
+const modelUrl = 'PARTICLES/assets/face_model.glb'; // IMPORTANT: Path to your model
 
 // --- Animation Variables ---
 const animationDuration = 4; // seconds
